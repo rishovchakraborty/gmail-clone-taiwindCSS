@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Gmail clone</title>
+</head>
+
+<body class="p-0 m-0 font-serif bg-[#e4edfa]">
+    <div class="content p-4 ">
+        <div class="header flex  sticky justify-between">
+            <div class="header-left flex gap-4 justify-center items-center">
+                <span class="material-symbols-outlined hover:bg-[#bad7ff] p-3 rounded-lg">
+                    menu
+                </span>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKIAAAB5CAMAAACN1QrFAAABFFBMVEX////qQzVChfQ0qFPFIh/7vATZ7N0go0aQsvi22778wADxfSXSLifpPTY3gPT/vQD+8NPqPS7CAADpNiX++vr7uADpMh/pKxWPWJj85+b2urb74N7wgnv+9fTrSDvtZVzGIBnDEQzLRkb8ylnSWlfzoZzudGv3xsP1rqr62dfsV0zrTkH5zsvKGQDxi4U0iv6sPmPoHwDC1PspevNsnPbr8f3mq6rWdXX+5rf81Hv8xjr8wir8zmf93Zz+68bqurj92Y7JOznahYT+9+jgk5LSPTTyiTz94qnyl5HItylvbsWesTbluhdnrEjUuCHAKC6XUotXe9+xOli2NE14rUSpY5DOiVNVsmyIx5ahvvluvIFSjvSK8cHsAAAFWElEQVR4nO3bWXvaOBQGYAlDSGeJETamYUmANAkEQoZOlmZp0ybTSbrN2plpm///P0Y2OHjRcgyWzIV1rUd5H30c6dgQhB6HPTg96xWLxd7Z6cBGGYzKi/OLUql0efXyFfPv29e9TrXbocROt9rpXWtHvtop1UrTUatdvI5P2H9TdXn+6FTfjLQCKzu+b6Ys3YUn2Dch4BR5o3EjX5biY+c2OONZtRgf1WdtXcLzGoNYu5gbbaawWOxWr7UAKyWW0B2Pxhu20A37Fw1h33F8btazP3/NE3phb6oWXvG20M36tTel/TZaKaGwu/tKgZULgZCOijvpVLCJ07AVCl8IfXQbz+kkuyfaRC/snqqwb0Uhz4y0YgYyIQ37rZqwm7/KgJR4J83ZGz9MdhUI+9b338mNVwiddQFE7GynHXa75fwIIdLzW/pR9IiY4HTv7Oa2g0HEy1skB3pEjOvjFIWNCcEwIj12wETs7KUVdntsuQumT8QWTqeymweeUAWRhn2fwp3dJwSrI9LKXrZBs+/r/mJqiJiQ5cIeDB2smIiJtUzYDT9klUT6gVy8sltOcCF1RLqRi4U9mFWyBiI9fha5sxuYYH3EBe7s9ngSXUQtEVvDZGE3IyFrIGJSTxJ2qJJ1EZOE3Q5Xsj4iJluwBs1tvJYhHi5OBN7ZjTojZDDRrKCnXXlPyyUCwm6P2VsIJJrv1tDR+6L00YBPxJYk7M0DrhBANM0PxhoqFAo/ycIWEGlli8LuW5yQQUTz4ydjSiw8PRSHLSKKunGbHzKEaP5mGD7x6P3vwo0UE7kN2kAQspzohjwnFo7+FIYtIboNGkPYEIUsJXohB4h0/CEIW0Z0G7RYNy4OWUY03xlGlCgKW07ExAmHPRjG72Q40Sx9MOJEGvZfPCOASKsmeGc3tiQhC4mPIUeIFMmrbBAx8OjFaLySEOchx4hu2MxjHEbEZNagsRovODEYcpxIw/6bFTaQSD+Qu5BKFhLN0mdDROSEDSW6YTdbdfk0PjEcMpNIw+7EwoYT6eMJLGQ20T+uxUTWMZ6AmGTEiOblp5iQRXSP8UiDpokYD5lPjIathcgKmU8sHBVCx7gOYui4BhAL4QZNA3HaeCUj0m78UBuRF7KYGKxs1URmJQOIhXmDppjID1lO9O9spURRyHKi36CpJJofPwuFMiI9fdzKVkgUhwwhTsNWSBSHDCN6DZoyoiRkIJEi/4F3L0lG/d+yXAgjbqyPWK8HlxyE9J+kSESbe+BGFTisgwFKlYjsXWi7DxtOy0YpExHaTzFsMum7S6ZNRDbnZWvyQZ9wkBIiDdtJZSOd1uyBO30iQqMED0+8QZy+v5wKYgqVbR00kVIiQvfLGeutwCs0RUQ02lo8bGI1gkupIqLNhSvbPa61EBHanSxU2bH3pAqJaAR4wRkdhDSiy6gkLhC2hQexVZQSadjJjvH6mPHtjGIiPcbhRtp4sZZQTUxwjFvDeMhaiJKvzwLCFucrOA1EUIM2a7yyIqL2nqyyncCdnAkR2ffiE9JpCX5kpodIK9viI0mdG7JOIq1sXtiWIGStRPf3fsyqYXx3mRWRVjbjKz/ixO7kLImovR39QEYbr8yJboMWDllUyRkRQw0a507Omhj4UZNlyUPOhEgfvRx4yBkRvQYNGHJWRNqNT4bwf0bIhIjsfoLfK2dDTDRyYk7MiTkxJ+bEnJgTc2JOzIkrQjxefeL6xmoT/0Po+WoTy18QOnlYbeIanff15xUmlr95E49lUWe5i9OJJw8SY3ZEL2bPeCzOOiti2Vibz/36sCHYyUyI5bLxJTT55Pk6v7IzIX574m/h/73t7rJv0ZgtAAAAAElFTkSuQmCC"
+                    alt="" class="h-7 w-9">
+                <span class="text-[30px]">Gmail</span>
+            </div>
+            <div class="header-mid flex flex-0.7 items-center gap- p-10px px-8 rounded-[13.25rem]  bg-[#cedff7]">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+                <input type="text" placeholder="search mail" class="fill-none bg-[#cedff7]  outline-none mr-96">
+                <span class="material-symbols-outlined">
+                    density_small
+                </span>
+            </div>
+            <div class="header-right flex items-center gap-8 ">
+                <span class="material-symbols-outlined hover:bg-[#95b9eb] p-3 rounded-lg">
+                    question_mark
+                </span>
+                <span class="material-symbols-outlined hover:bg-[#95b9eb] p-3 rounded-lg">
+                    settings
+                </span>
+                <span class="material-symbols-outlined hover:bg-[#95b9eb] p-3 rounded-lg">
+                    apps
+                </span>
+                <span class="material-symbols-outlined hover:bg-[#95b9eb] p-3 rounded-lg">
+                    account_circle
+                </span>
+            </div>
+        </div>
+        <div class="main flex">
+            <div class="sidebar-left">
+                <div class="compose pt-7 pl-3 flex items-center gap-3 ">
+                    <button class="p-4 rounded-[1.25rem] bg-[#b8d2f5] hover:bg-[#95b9eb]"><span class="material-symbols-outlined ">
+                            edit
+                        </span>
+                        <span class="text-[18px] ">compose</span>
+                    </button>
+                </div>
+                <div class="options mt-7 max-w-[16rem]  pr-3">
+                    <div
+                        class="each-option flex justify-between pr-3 hover:bg-[#bad7ff] rounded-br-[1.25rem] rounded-tr-[1.25rem]">
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                inbox
+                            </span>
+                        </div>
+                        <div class="text">
+                            <span>Inbox</span>
+                        </div>
+                        <div class="count">
+                            <span>33</span>
+                        </div>
+                    </div>
+                    <div class="each-option flex justify-between pr-3 hover:bg-[#bad7ff] rounded-br-[1.25rem] rounded-tr-[1.25rem]">
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                star
+                            </span>
+                        </div>
+                        <div class="text">
+                            <span>Starred</span>
+                        </div>
+                        <div class="count">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="each-option flex justify-between pr-3 hover:bg-[#bad7ff] rounded-br-[1.25rem] rounded-tr-[1.25rem]">
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                schedule
+                            </span>
+                        </div>
+                        <div class="text">
+                            <span>Snozzed</span>
+                        </div>
+                        <div class="count">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="each-option flex justify-between pr-3 hover:bg-[#bad7ff] rounded-br-[1.25rem] rounded-tr-[1.25rem]">
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                send
+                            </span>
+                        </div>
+                        <div class="text">
+                            <span>Sent</span>
+                        </div>
+                        <div class="count">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="each-option flex justify-between pr-3 hover:bg-[#bad7ff] rounded-br-[1.25rem] rounded-tr-[1.25rem]">
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                draft
+                            </span>
+                        </div>
+                        <div class="text">
+                            <span>draft</span>
+                        </div>
+                        <div class="count">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="each-option flex justify-between pr-3 hover:bg-[#bad7ff] rounded-br-[1.25rem] rounded-tr-[1.25rem]">
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                expand_more
+                            </span>
+                        </div>
+                        <div class="text">
+                            <span>More</span>
+                        </div>
+                        <div class="count">
+                            <span></span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="labels mt-5 flex justify-around max-w-[16rem] pr-24">
+                    <span class=" hover:bg-[#b6d7ec] hover:rounded-lg p-3">Labels</span>
+                    <span class="material-symbols-outlined p-3  hover:bg-[#b6d7ec] hover:rounded-lg">
+                        add
+                    </span>
+                </div>
+            </div>
+            <div class="middle w-[77vw] mt-7 bg-white h-[100vh] rounded-lg overflow-y-scroll">
+                <div class="middle-top flex justify-between mt-3 ml-3 mr-3">
+                    <div class="left flex gap-3 pt-3 ">
+                        <span class="material-symbols-outlined  p-3 hover:bg-[#b6d7ec] hover:rounded-lg">
+                            check_box_outline_blank
+                        </span>
+                        <span class="material-symbols-outlined  p-3 hover:bg-[#b6d7ec] hover:rounded-lg">
+                            arrow_drop_down
+                        </span>
+                        <span class="material-symbols-outlined  p-3 hover:bg-[#b6d7ec] hover:rounded-lg">
+                            replay
+                        </span>
+                        <span class="material-symbols-outlined  p-3 hover:bg-[#b6d7ec] hover:rounded-lg">
+                            more_vert
+                        </span>
+                        <span class="material-symbols-outlined p-3  hover:bg-[#b6d7ec] hover:rounded-lg">
+                            delete
+                        </span>
+                    </div>
+                    <div class="right flex gap-3">
+                        <div class="show-page-count p-3 rounded-md flex items-start  hover:bg-[#b6d7ec] hover:rounded-lg">
+                            1-50 of 2230
+                        </div>
+                        <span class="material-symbols-outlined pt-3   hover:bg-[#b6d7ec] hover:rounded-lg">
+                            chevron_left
+                        </span>
+                        <span class="material-symbols-outlined pt-3  hover:bg-[#b6d7ec] hover:rounded-lg">
+                            chevron_right
+                        </span>
+                    </div>
+                </div>
+                <div class="middle-main mt-5 flex-col gap-y-2  ">
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+                    <div
+                        class="each-middle-main flex m-3 hover:bg-[#b6d7ec] hover:border-[1.3px] hover:rounded-md border-slate-300">
+                        <div class="inbox-icon">
+                            <span class="material-symbols-outlined pr-5">
+                                check_box_outline_blank
+                            </span>
+                        </div>
+                        <div class="star-icon">
+                            <span class="material-symbols-outlined pr-20">
+                                grade
+                            </span>
+                        </div>
+                        <div class="mid-txt pr-28">LinkedIn</div>
+                        <div class="disc pr-28">👤 5 people have accepted your invitation to connect.Tap to see</div>
+                        <div class="time float-right ">02:23 AM</div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="sidebar-right flex-col mt-7 ml-2 ">
+                <img src="https://play-lh.googleusercontent.com/_bh6XK3B7TAk7kBXC1GHC0j9eS9cw9wQo2K7fiP7FDGAQlcOqgUPT2lx3WgZ0JlOJh8" alt="" class="h-6 w-7 mb-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Google_Keep_icon_%282020%29.svg/1200px-Google_Keep_icon_%282020%29.svg.png" alt="" class="h-6 w-7 mb-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Google_Tasks_2021.svg/1200px-Google_Tasks_2021.svg.png" alt="" class="h-6 w-7 mb-6">
+                <img src="data:image/png;base64,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" alt=""  class="h-6 w-7 mb-44">
+                <span class="material-symbols-outlined p-3  hover:bg-[#b6d7ec] hover:rounded-lg">
+                    add
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
